@@ -29,30 +29,26 @@ u2 = User.create!(
 
 # u3 = User.create!(email: 'the@the.com', first_name: 'The', last_name: 'Blas', password: 'password', password_confirmation: 'password',  band_telephone: '8574383837', artist_id: '86847383893shs', band_image: 'stringbla', is_bar?: 'yes' )
 
-e1 = Event.create!(
-  user_id: ,
-  date: 01/03/2017,
+e1 = u1.events.create!(
+  date: Time.now + (60*60*24),
   slots_on_offer: 3,
   slots_taken: 1,
   is_active?: true
 )
 
-e2 = Event.create!(
-  user_id: ,
-  date: 02/03/2017,
+e2 = u1.events.create!(
+  date: Time.now + (60*60*24*4),
   slots_on_offer: 4,
   slots_taken: 0,
   is_active?: true
 )
 
-r1 = Request.create!(
-  user_id: u2.id,
+r1 = u2.requests.create!(
   event_id: e1.id,
   status: "accepted"
 )
 
-r2 = Request.create!(
-  user_id: u2.id,
+r2 = u2.requests.create!(
   event_id: e2.id,
   status: "rejected"
 )

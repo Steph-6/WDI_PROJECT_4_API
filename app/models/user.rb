@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
+  has_many :events
+  has_many :requests
   validates :email, presence: true, uniqueness: true
   validates :first_name, presence: true
   validates_presence_of :is_bar?
