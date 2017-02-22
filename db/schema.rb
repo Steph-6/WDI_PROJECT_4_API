@@ -38,8 +38,7 @@ ActiveRecord::Schema.define(version: 20170220120126) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "name"
     t.string   "password_digest"
     t.string   "bar_location"
     t.string   "bar_telephone"
@@ -48,7 +47,7 @@ ActiveRecord::Schema.define(version: 20170220120126) do
     t.string   "bar_image"
     t.string   "bar_description"
     t.string   "artist_id"
-    t.string   "is_bar?"
+    t.string   "is_bar"
     t.integer  "bar_size"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
