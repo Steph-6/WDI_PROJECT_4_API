@@ -4,4 +4,5 @@ class Event < ApplicationRecord
   has_many :requests
 
   validates :date, presence: :true
+  # validates :requests, :numericality => { :less_than_or_equal_to => 3 }
 end
