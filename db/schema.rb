@@ -10,17 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170222131844) do
+ActiveRecord::Schema.define(version: 20170220120126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "events", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "date"
+    t.datetime "date"
     t.integer  "slots_on_offer"
-    t.integer  "slots_taken"
-    t.boolean  "is_active?"
+    t.string   "is_expired"
+    t.string   "is_at_capacity"
+    t.text     "description"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.index ["user_id"], name: "index_events_on_user_id", using: :btree
@@ -30,20 +31,11 @@ ActiveRecord::Schema.define(version: 20170222131844) do
     t.integer  "event_id"
     t.integer  "user_id"
     t.string   "status"
+    t.string   "band_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_requests_on_event_id", using: :btree
     t.index ["user_id"], name: "index_requests_on_user_id", using: :btree
-  end
-
-  create_table "slots", force: :cascade do |t|
-    t.float    "duration"
-    t.text     "description"
-    t.integer  "slots_on_offer"
-    t.integer  "slots_taken"
-    t.boolean  "is_active?"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
   end
 
   create_table "users", force: :cascade do |t|

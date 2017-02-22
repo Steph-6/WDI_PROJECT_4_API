@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::API
   before_action :authenticate_user!
+  before_action :update_expired_events
 
   def authenticate_user!
     render json: { errors: ["Unauthorized"] }, status: 401 unless user_signed_in?
@@ -28,6 +29,14 @@ class ApplicationController < ActionController::API
     def token
       @token ||= if request.headers['Authorization'].present?
         request.headers['Authorization'].split.last
+      end
+    end
+
+    def update_expired_events
+      events = Event.where(is_expired: "no").select { |event| event.date < Time.now }
+      events.each do |event|
+        event.update(is_expired: "yes")
+        p "#{event.user.name}'s event has expired"
       end
     end
 end

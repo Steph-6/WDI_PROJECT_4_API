@@ -29,24 +29,31 @@ u2 = User.create!(
 
 e1 = u1.events.create!(
   date: Time.now + (60*60*24),
-  slots_on_offer: 3,
-  slots_taken: 1,
-  is_active?: true
+  description: "first event",
+  slots_on_offer: 1
 )
 
 e2 = u1.events.create!(
   date: Time.now + (60*60*24*4),
-  slots_on_offer: 4,
-  slots_taken: 0,
-  is_active?: true
+  description: "second event",
+  slots_on_offer: 4
+)
+
+e3 = u1.events.create!(
+  date: Time.now + (60*60*24*5),
+  description: "third event",
+  slots_on_offer: 6
 )
 
 r1 = u2.requests.create!(
-  event_id: e1.id,
-  status: "accepted"
+  event_id: e1.id
 )
 
 r2 = u2.requests.create!(
   event_id: e2.id,
   status: "rejected"
+)
+
+r3 = u2.requests.create!(
+  event_id: e3.id
 )
