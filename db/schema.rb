@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20170220120126) do
 
   create_table "events", force: :cascade do |t|
     t.integer  "user_id"
-    t.datetime "date"
+    t.string   "date"
     t.integer  "slots_on_offer"
     t.integer  "slots_taken"
     t.boolean  "is_active?"
