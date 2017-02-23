@@ -20,7 +20,6 @@ u2 = User.create!(
   password: 'password',
   password_confirmation: 'password',
   band_telephone: '07565554564',
-  artist_id: '86847384747hhs',
   band_image: 'stringwho',
   is_bar: 'no'
 )

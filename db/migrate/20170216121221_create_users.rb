@@ -10,7 +10,6 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string  :band_image
       t.string  :bar_image
       t.string  :bar_description
-      t.string  :artist_id
       t.string  :is_bar
       t.integer :bar_size
       t.timestamps

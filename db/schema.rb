@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 20170220120126) do
     t.string   "band_image"
     t.string   "bar_image"
     t.string   "bar_description"
-    t.string   "artist_id"
     t.string   "is_bar"
     t.integer  "bar_size"
     t.datetime "created_at",      null: false
