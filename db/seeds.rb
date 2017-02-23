@@ -119,34 +119,34 @@ u10 = User.create!(
 )
 
 e1 = u1.events.create!(
-  date: Time.now + (60*60*24),
+  date: Time.now + (70*60*24),
   slots_on_offer: 1
 )
 
 e2 = u1.events.create!(
-  date: Time.now + (60*60*24*4),
+  date: Time.now + (60*50*24*4),
   slots_on_offer: 4
 )
 
 e3 = u2.events.create!(
-  date: Time.now + (60*60*24*10),
+  date: Time.now + (80*60*24*10),
   slots_on_offer: 3
 )
 
 e4 = u3.events.create!(
-  date: Time.now + (60*60*24*7),
+  date: Time.now + (20*60*24*7),
   slots_on_offer: 4
 )
 e5 = u4.events.create!(
-  date: Time.now + (60*60*24*2),
+  date: Time.now + (34*60*24*2),
   slots_on_offer: 3
 )
 e6 = u5.events.create!(
-  date: Time.now + (60*60*24*3),
+  date: Time.now + (12*60*24*3),
   slots_on_offer: 3
 )
 e7 = u5.events.create!(
-  date: Time.now + (60*60*24*7),
+  date: Time.now + (70*60*24*7),
   slots_on_offer: 1
 )
 e7 = u5.events.create!(
@@ -154,11 +154,11 @@ e7 = u5.events.create!(
   slots_on_offer: 2
 )
 e7 = u6.events.create!(
-  date: Time.now + (60*60*24*12),
+  date: Time.now + (37*60*24*12),
   slots_on_offer: 1
 )
 e8 = u6.events.create!(
-  date: Time.now + (60*60*24*3),
+  date: Time.now + (104*60*24*3),
   slots_on_offer: 2
 )
 
