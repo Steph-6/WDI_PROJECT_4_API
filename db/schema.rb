@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20170220120126) do
     t.string   "bar_image"
     t.string   "bar_description"
     t.string   "is_bar"
+    t.string   "website"
     t.integer  "bar_size"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false

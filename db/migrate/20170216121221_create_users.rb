@@ -11,6 +11,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string  :bar_image
       t.string  :bar_description
       t.string  :is_bar
+      t.string  :website
       t.integer :bar_size
       t.timestamps
     end
