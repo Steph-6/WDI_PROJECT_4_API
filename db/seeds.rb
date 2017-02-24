@@ -149,15 +149,15 @@ e7 = u5.events.create!(
   date: Time.now + (70*60*24*7),
   slots_on_offer: 1
 )
-e7 = u5.events.create!(
+e8 = u5.events.create!(
   date: Time.now + (60*60*24*9),
   slots_on_offer: 2
 )
-e7 = u6.events.create!(
+e9 = u6.events.create!(
   date: Time.now + (37*60*24*12),
   slots_on_offer: 1
 )
-e8 = u6.events.create!(
+e10 = u6.events.create!(
   date: Time.now + (104*60*24*3),
   slots_on_offer: 2
 )
