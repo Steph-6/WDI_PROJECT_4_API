@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  before_action :set_request, only: [:update_accept, :update_reject]
+  before_action :set_request, only: [:update_accept, :update_reject, :destroy]
 
   # # GET /requests
   # def index
@@ -32,11 +32,12 @@ class RequestsController < ApplicationController
   #     render json: @request.errors, status: :unprocessable_entity
   #   end
   # end
-  #
-  # # DELETE /requests/1
-  # def destroy
-  #   @request.destroy
-  # end
+
+  # DELETE /requests/1
+  def destroy
+    @request.destroy
+    p 'destroying'
+  end
 
   def update_accept
     if @request.update(status: "accepted")
