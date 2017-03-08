@@ -26,9 +26,9 @@ class AuthenticationsController < ApplicationController
     def user_params
       hash = {}
       if params[:bar_location] && params[:bar_telephone] && params[:bar_size] && params[:bar_image]
-      hash.merge! params.slice(:email, :name, :password, :password_confirmation, :is_bar, :bar_location, :bar_telephone, :bar_size, :bar_image)
+      hash.merge! params.slice(:email, :name, :password, :password_confirmation, :is_bar, :bar_location, :bar_telephone, :bar_size, :bar_image, :lat, :lng)
       else
-      hash.merge! params.slice(:email, :name, :password, :password_confirmation, :is_bar, :band_telephone, :artist_id)
+      hash.merge! params.slice(:email, :name, :password, :password_confirmation, :is_bar, :band_telephone, :band_location, :artist_id)
       end
       hash
     end

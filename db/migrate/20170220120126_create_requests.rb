@@ -5,6 +5,8 @@ class CreateRequests < ActiveRecord::Migration[5.0]
       t.references :user, foreign_key: true
       t.string     :status
       t.string     :band_name
+      t.string     :bar_name
+      t.integer    :bar_id
 
       t.timestamps
     end

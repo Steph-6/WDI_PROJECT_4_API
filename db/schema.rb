@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 20170220120126) do
     t.integer  "user_id"
     t.string   "status"
     t.string   "band_name"
+    t.string   "bar_name"
+    t.integer  "bar_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_requests_on_event_id", using: :btree
@@ -43,6 +45,7 @@ ActiveRecord::Schema.define(version: 20170220120126) do
     t.string   "name"
     t.string   "password_digest"
     t.string   "bar_location"
+    t.string   "band_location"
     t.string   "bar_telephone"
     t.string   "band_telephone"
     t.string   "band_image"
@@ -51,6 +54,8 @@ ActiveRecord::Schema.define(version: 20170220120126) do
     t.string   "is_bar"
     t.string   "website"
     t.integer  "bar_size"
+    t.float    "lat"
+    t.float    "lng"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

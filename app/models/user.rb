@@ -5,8 +5,8 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :name, presence: true
   validates_presence_of :is_bar
-  validates_presence_of :bar_size, :bar_location, :bar_image, :bar_telephone, :website, :if =>  lambda {|o| o.is_bar == 'yes' }
-  validates_presence_of :band_telephone, :if => lambda {|o| o.is_bar == 'no' }
+  validates_presence_of :bar_size, :bar_location, :bar_image, :bar_telephone, :website, :lat, :lng, :if =>  lambda {|o| o.is_bar == 'yes' }
+  validates_presence_of :band_telephone, :band_location, :if => lambda {|o| o.is_bar == 'no' }
 
   private
   def user_is_bar

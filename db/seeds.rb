@@ -13,7 +13,9 @@ u1 = User.create!(
   bar_description: '“The Nikkei cuisine is at the heart of the Chotto-Matte experience. It embraces the very best of Nikkei (Japanese – Peruvian) dishes, with bold eye-catching natural colors and mouth-watering taste sensations.” “We have an extensive menu, so anyone who wants to find something to eat, will find it here”',
   website: "https://www.Chotto-Matte.com",
   bar_size: 200,
-  is_bar: 'yes'
+  is_bar: 'yes',
+  lat: 51.5138347,
+  lng: -0.1312904
 )
 
 u3 = User.create!(
@@ -27,7 +29,9 @@ u3 = User.create!(
   bar_description: 'Since opening in 2007, Maddox Private Members Club has offered London a boutique sanctuary in which to party.',
   bar_size: 100,
   is_bar: 'yes',
-  website: 'https://www.maddoxclub.com'
+  website: 'https://www.maddoxclub.com',
+  lat: 51.51267745,
+  lng: -0.1424233
 )
 
 u4 = User.create!(
@@ -41,7 +45,9 @@ u4 = User.create!(
   bar_description: 'European vanguard for jazz and blues from world\'s top musicians, in basement club with late bar.',
   bar_size: 120,
   is_bar: 'yes',
-  website: 'https://www.ronniescotts.co.uk/'
+  website: 'https://www.ronniescotts.co.uk/',
+  lat: 51.5133057,
+  lng: -0.1315010
 )
 
 u5 = User.create!(
@@ -55,7 +61,9 @@ u5 = User.create!(
   bar_description: 'Stylish, mirror-ceilinged DJ bar with a colourfully lit roof terrace and a lengthy cocktail menu.',
   bar_size: 180,
   is_bar: 'yes',
-  website: 'www.goldenbee.co.uk'
+  website: 'www.goldenbee.co.uk',
+  lat: 51.525933,
+  lng: -0.085417
 )
 
 u6 = User.create!(
@@ -69,7 +77,9 @@ u6 = User.create!(
   bar_description: 'Urban hangout turning out burgers with creative toppings, plus craft beers and cocktails.',
   bar_size: 100,
   is_bar: 'yes',
-  website: 'www.magicroundabout.co'
+  website: 'www.magicroundabout.co',
+  lat: 51.525470,
+  lng: -0.087526
 )
 
 u2 = User.create!(
@@ -78,7 +88,7 @@ u2 = User.create!(
   password: 'password',
   password_confirmation: 'password',
   band_telephone: '07565554564',
-  band_image: 'stringwho',
+  band_location: 'somewhere',
   is_bar: 'no'
 )
 
@@ -88,6 +98,7 @@ u7 = User.create!(
   password: 'password',
   password_confirmation: 'password',
   band_telephone: '07098054564',
+  band_location: 'somewhere',
   is_bar: 'no'
 )
 
@@ -97,6 +108,7 @@ u8 = User.create!(
   password: 'password',
   password_confirmation: 'password',
   band_telephone: '07568923934',
+  band_location: 'somewhere',
   is_bar: 'no'
 )
 
@@ -106,6 +118,7 @@ u9 = User.create!(
   password: 'password',
   password_confirmation: 'password',
   band_telephone: '075655849324',
+  band_location: 'somewhere',
   is_bar: 'no'
 )
 
@@ -115,11 +128,12 @@ u10 = User.create!(
   password: 'password',
   password_confirmation: 'password',
   band_telephone: '07345554564',
+  band_location: 'somewhere',
   is_bar: 'no'
 )
 
 e1 = u1.events.create!(
-  date: Time.now + (70*60*24),
+  date: Time.now - (70*60*24),
   slots_on_offer: 1
 )
 
@@ -146,7 +160,7 @@ e6 = u5.events.create!(
   slots_on_offer: 3
 )
 e7 = u5.events.create!(
-  date: Time.now + (70*60*24*7),
+  date: Time.now - (70*60*24*7),
   slots_on_offer: 1
 )
 e8 = u5.events.create!(

@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string  :name
       t.string  :password_digest
       t.string  :bar_location
+      t.string  :band_location
       t.string  :bar_telephone
       t.string  :band_telephone
       t.string  :band_image
@@ -13,6 +14,8 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string  :is_bar
       t.string  :website
       t.integer :bar_size
+      t.float   :lat
+      t.float   :lng
       t.timestamps
     end
   end
