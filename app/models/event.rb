@@ -3,7 +3,6 @@ class Event < ApplicationRecord
   has_many :requests
 
   validates :date, presence: :true
-  # validates :date, :long => "%B %d, %Y %H:%M"
 
   before_create :set_default_flags
 

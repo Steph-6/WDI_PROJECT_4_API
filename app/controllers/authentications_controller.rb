@@ -25,11 +25,22 @@ class AuthenticationsController < ApplicationController
   private
     def user_params
       hash = {}
-      if params[:bar_location] && params[:bar_telephone] && params[:bar_size] && params[:bar_image] && params[:bar_website]
-      hash.merge! params.slice(:email, :name, :password, :password_confirmation, :is_bar, :bar_location, :bar_telephone, :bar_size, :bar_image, :lat, :lng)
+      if params[:is_bar] == "yes"
+        hash.merge! params.slice(:email, :name, :password, :password_confirmation, :is_bar, :bar_location, :bar_telephone, :website, :bar_size, :bar_image, :lat, :lng)
       else
-      hash.merge! params.slice(:email, :name, :password, :password_confirmation, :is_bar, :band_telephone, :band_location, :artist_id)
+        hash.merge! params.slice(:email, :name, :password, :password_confirmation, :is_bar, :band_telephone, :band_location, :artist_id)
       end
       hash
     end
+
+
+    # def user_params
+    #   hash = {}
+    #   if params[:bar_location] && params[:bar_telephone] && params[:bar_size] && params[:bar_image] && params[:bar_website]
+    #     hash.merge! params.slice(:email, :name, :password, :password_confirmation, :is_bar, :bar_location, :bar_telephone, :bar_size, :bar_image, :lat, :lng)
+    #   else
+    #     hash.merge! params.slice(:email, :name, :password, :password_confirmation, :is_bar, :band_telephone, :band_location, :artist_id)
+    #   end
+    #   hash
+    # end
 end
