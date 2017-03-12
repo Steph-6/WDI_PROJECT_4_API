@@ -2,11 +2,14 @@
 
 ###Overview
 For my intial concept I knew I wanted to explore the relationships that can be created with Ruby on Rails - so at least three models. I wanted to create a social network between bars and musicians to make small venues and bars more accessible to unsigined artists.
+  
+The application can be used here: [VeNew](https://client-thingy.herokuapp.com/)
 
 Model relationship:
-![image](http://imgur.com/a/ko6Fu.png)
+![image](http://imgur.com/a/ko6Fu.png)  
 
-As a Venue Manager the user can add an Event with a number of slots available. Each slot can then be requested by a registered Musician. The Venue Manager can then accept or reject the pending request.  
+
+As a Venue Manager the user can add an Event with a number of slots available. Each slot can then be requested by a registered Musician. The Venue Manager can then accept or reject that pending request.  
 
 ##MVP - Database Creation
 ###Migration
@@ -18,14 +21,13 @@ Once the three migration files were created they were migrated to the schema.
 At first with the three models I used a few atrributes for each model which could then be built upon and migrated again. 
 
 *** 
-####User - has_many :requests, has_many :events
-An important decision I made for the User model was to create one for the Bars and one for the Musicians. However since this would mean setting user authentication for each type of user I decided to use an is_bar boolean to use throughout the application.  
-Then within the model I also had name, location, contact details etc.
-Then within the User model file created I used   
+####User - has many :requests, has many :events
+An important decision I made for the User model was or not to create one for the Bars and another for the Musicians. However since this would mean setting user authentication for each type of user I decided to use an is_bar boolean throughout the application.  
+Then within the User model I also had name, location, contact details etc.  
  
 ```
   validates_presence_of :is_bar
-  validates_presence_of :bar_size, :bar_location, :bar_image, :bar_telephone, :website, :lat, :lng, :if =>  lambda {|o| o.is_bar == 'yes' }
+  validates_presence_of :bar_size, :bar_location, :bar_image, :bar_telephone, :website :if =>  lambda {|o| o.is_bar == 'yes' }
   validates_presence_of :band_telephone, :band_location, :if => lambda {|o| o.is_bar == 'no' }
 
   private
@@ -42,14 +44,21 @@ Then within the User model file created I used
 #####User Serializer
 Within the serializer I could use the attributes created to make more attributes that wold be helpful down the line:  
   
-* my pending requests
+* my pending requests  
+
+```
+  def my_pending_requests
+    object.requests.where(status: "pending")
+  end
+```  
+ 
 * my accepted requests
 * my rejected requests
 
 
 ***
-####Event - belongs_to :user, has_many requests
-The Event model was important to have date and the number of slots on offer. The idea was that each 'slot' would represent a periodof time on that date that could be booked later - something that I knew further down the line would be easy to implement, but for MVP purposes remained as 'slots on offer'.  
+####Event - belongs to :user, has many requests
+The Event model was important to have date and the number of slots on offer. The idea was that each 'slot' would represent a period of time on that date that could be booked later - something that I knew further down the line would be easy to implement, but for MVP purposes remained as 'slots on offer'.  
 Also seeing as each event would be assinged a date I used an update_expired_events method in the application_controller that would be run before_action.  
 
 ```
@@ -87,5 +96,9 @@ end
 ```
 Because it was important to me for the website to have a very easy user journey I made sure to also include the id's of each attribute so that links to those show pages could be implemented.  
 In this model after each request was made I also ran the method to check whether the event was at capacity or not. 
+
+*** 
+
+For further details on the site please read [Client-side VeNew](https://github.com/Steph-6/WDI_PROJECT_4_CLIENT/blob/master/README.md)
 
 
