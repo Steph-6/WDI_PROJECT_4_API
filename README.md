@@ -6,7 +6,7 @@ For my intial concept I knew I wanted to explore the relationships that can be c
 The application can be used here: [VeNew](https://client-thingy.herokuapp.com/)
 
 Model relationship:
-![image](http://imgur.com/a/ko6Fu.png)  
+![image](http://i.imgur.com/MhFHfsY.png) 
 
 
 As a Venue Manager the user can add an Event with a number of slots available. Each slot can then be requested by a registered Musician. The Venue Manager can then accept or reject that pending request.  
