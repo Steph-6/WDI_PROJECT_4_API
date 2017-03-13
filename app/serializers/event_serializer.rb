@@ -8,7 +8,6 @@ class EventSerializer < ActiveModel::Serializer
   end
 
   def date_string
-    # object.date.to_formatted_s(:long_ordinal)
     object.date.strftime("At %I:%M on the %m/%d/%Y")
   end
 

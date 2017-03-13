@@ -6,6 +6,7 @@ class Request < ApplicationRecord
   before_create :set_band_name
   before_create :set_bar_name
   before_create :set_bar_id
+  # before_create :set_request_date
   after_update  :check_event_accepted_requests
 
   private
@@ -24,6 +25,10 @@ class Request < ApplicationRecord
   def set_bar_id
     self.bar_id = Event.find(self.event_id).user.id
   end
+
+  # def set_request_date
+  #   self.request_date = Event.find(self.event_id).
+  # end
 
   def check_event_accepted_requests
     event = Event.find(self.event_id)
