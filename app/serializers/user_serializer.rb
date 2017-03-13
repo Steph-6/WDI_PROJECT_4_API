@@ -8,14 +8,20 @@ class UserSerializer < ActiveModel::Serializer
   end
 
   def my_pending_requests
-    object.requests.where(status: "pending")
+    object.requests.where(status: "pending").map do |r|
+      RequestSerializer.new(r)
+    end
   end
 
   def my_accepted_requests
-    object.requests.where(status: "accepted")
+    object.requests.where(status: "accepted").map do |r|
+      RequestSerializer.new(r)
+    end
   end
 
   def my_rejected_requests
-    object.requests.where(status: "rejected")
+    object.requests.where(status: "rejected").map do |r|
+      RequestSerializer.new(r)
+    end
   end
 end

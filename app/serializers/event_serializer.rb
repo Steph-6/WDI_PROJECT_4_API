@@ -8,7 +8,7 @@ class EventSerializer < ActiveModel::Serializer
   end
 
   def date_string
-    object.date.strftime("At %I:%M on the %m/%d/%Y")
+    object.date.strftime("At %l:%M %p on the %m/%d/%Y")
   end
 
   def slots_remaining
